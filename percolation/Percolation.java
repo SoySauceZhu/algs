@@ -43,31 +43,6 @@ public class Percolation {
         return -1;
     }
 
-    // private int[] toCordinate(int index) {
-    //     if (index < 0 || index >= n) {
-    //         return null;
-    //     }
-    //     return new int[] { index / n + 1, index % n + 1 };
-    // }
-    //
-    // private int[] findNeighborIndex(int row, int col) {
-    //     // left right up down
-    //     int[] index = new int[4];
-    //
-    //     for (int i = 0; i < 4; i++) {
-    //         int x = row + dx[i];
-    //         int y = col + dy[i];
-    //
-    //         if (isInGrid(x, y)) {
-    //             index[i] = toIndex(x, y);
-    //         }
-    //         else {
-    //             index[i] = -1;
-    //         }
-    //     }
-    //     return index;
-    // }
-
     public boolean isOpen(int row, int col) {
         if (!isInGrid(row, col)) {
             throw new IllegalArgumentException("row or col out of bounds");
