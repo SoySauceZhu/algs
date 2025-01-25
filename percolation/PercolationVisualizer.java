@@ -62,7 +62,7 @@ public class PercolationVisualizer {
     }
 
     public static void main(String[] args) {
-        StdDraw.pause(5000);
+        // StdDraw.pause(5000);
         In in = new In(args[0]);      // input file
         int n = in.readInt();         // n-by-n percolation system
 

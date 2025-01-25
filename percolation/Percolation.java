@@ -1,8 +1,5 @@
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class Percolation {
 
     private int n;
@@ -11,6 +8,7 @@ public class Percolation {
     private int[] dx = { -1, 1, 0, 0 };
     private int[] dy = { 0, 0, -1, 1 };
     private int opened = 0;
+    private boolean percolate = false;
 
     public Percolation(int n) {
         if (n <= 0) {
@@ -26,7 +24,7 @@ public class Percolation {
             }
         }
 
-        uf = new WeightedQuickUnionUF(n * n);
+        uf = new WeightedQuickUnionUF(n * n + 1);
     }
 
     private boolean isInGrid(int row, int col) {
@@ -55,6 +53,10 @@ public class Percolation {
             throw new IllegalArgumentException("row or col out of bounds");
         }
 
+        if (isOpen(row, col)) {
+            return;
+        }
+
         // update grid
         this.grid[row - 1][col - 1] = 1;
         opened = opened + 1;
@@ -69,6 +71,14 @@ public class Percolation {
                 uf.union(toIndex(row, col), toIndex(x, y));
             }
         }
+
+        if (row == 1) {
+            uf.union(toIndex(row, col), n * n);     // All first row elements are union to n^2 index
+        }
+
+        if (row == n && isFull(row, col)) {
+            percolate = true;
+        }
     }
 
     public boolean isFull(int row, int col) {
@@ -80,23 +90,10 @@ public class Percolation {
             return false;
         }
 
-        Set<Integer> roots = new HashSet<>();
-
-        for (int i = 0; i < n; i++) {
-            if (isOpen(1, i + 1)) {
-                roots.add(uf.find(i));
-            }
-        }
-
+        int fullRoot = uf.find(n * n);
         int root = uf.find(toIndex(row, col));
 
-        for (int i : roots) {
-            if (i == root) {
-                return true;
-            }
-        }
-
-        return false;
+        return fullRoot == root;
     }
 
     public int numberOfOpenSites() {
@@ -104,15 +101,7 @@ public class Percolation {
     }
 
     public boolean percolates() {
-        int row = n;
-        for (int col = 1; col < n + 1; col++) {
-            if (isOpen(row, col)) {
-                if (isFull(row, col)) {
-                    return true;
-                }
-            }
-        }
-        return false;
+        return percolate;
     }
 
 

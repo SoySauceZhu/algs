@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1e4f978-b3bd-4ae1-84e9-9e1170bce808" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/PercolationStats.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Percolation.class" beforeDir="false" afterPath="$PROJECT_DIR$/Percolation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Percolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Percolation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PercolationVisualizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/PercolationVisualizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PercolationVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/PercolationVisualizer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +94,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.InteractivePercolationVisualizer.executor": "Run",
     "Application.Percolation.executor": "Debug",
+    "Application.PercolationStats.executor": "Run",
     "Application.PercolationVisualizer.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -104,7 +110,14 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Percolation">
+    <configuration name="InteractivePercolationVisualizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InteractivePercolationVisualizer" />
+      <module name="Algorithms, Part I" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Percolation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Percolation" />
       <module name="Algorithms, Part I" />
@@ -112,9 +125,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PercolationStats" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PercolationStats" />
+      <module name="Algorithms, Part I" />
+      <option name="PROGRAM_PARAMETERS" value="200 100" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.PercolationStats" />
+      <item itemvalue="Application.InteractivePercolationVisualizer" />
+      <item itemvalue="Application.Percolation" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Percolation" />
+        <item itemvalue="Application.InteractivePercolationVisualizer" />
       </list>
     </recent_temporary>
   </component>
@@ -133,7 +160,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1737691056785</updated>
-      <workItem from="1737691057905" duration="10582000" />
+      <workItem from="1737691057905" duration="21510000" />
     </task>
     <servers />
   </component>
@@ -179,14 +206,10 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
-          <option name="timeStamp" value="3" />
-        </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Percolation.java</url>
-          <line>119</line>
-          <option name="timeStamp" value="5" />
+          <line>112</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -201,5 +224,9 @@
         <watch expression="perc.percolates()" language="JAVA" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
