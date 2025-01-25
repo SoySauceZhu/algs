@@ -4,7 +4,8 @@ public class Percolation {
 
     private int n;
     private int[][] grid;
-    private WeightedQuickUnionUF uf;
+    private WeightedQuickUnionUF percolateUF;
+    private WeightedQuickUnionUF fullUF;
     private int[] dx = { -1, 1, 0, 0 };
     private int[] dy = { 0, 0, -1, 1 };
     private int opened = 0;
@@ -23,7 +24,8 @@ public class Percolation {
             }
         }
 
-        uf = new WeightedQuickUnionUF(n * n + 2);
+        percolateUF = new WeightedQuickUnionUF(n * n + 2);
+        fullUF = new WeightedQuickUnionUF(n * n + 1);
     }
 
     private boolean isInGrid(int row, int col) {
@@ -67,17 +69,20 @@ public class Percolation {
             int y = col + dy[i];
 
             if (isInGrid(x, y) && isOpen(x, y)) {
-                uf.union(toIndex(row, col), toIndex(x, y));
+                percolateUF.union(toIndex(row, col), toIndex(x, y));
+                fullUF.union(toIndex(row, col), toIndex(x, y));
             }
         }
 
         if (row == 1) {
-            uf.union(toIndex(row, col), n * n);     // All first row elements are union to n^2 index
+            percolateUF.union(toIndex(row, col),
+                              n * n);     // All first row elements are union to n^2 index
+            fullUF.union(toIndex(row, col), n * n);
         }
 
         if (row == n) {
-            uf.union(toIndex(row, col),
-                     n * n + 1); // All last row elements are union to n^2+1 index
+            percolateUF.union(toIndex(row, col),
+                              n * n + 1); // All last row elements are union to n^2+1 index
         }
     }
 
@@ -90,8 +95,8 @@ public class Percolation {
             return false;
         }
 
-        int fullRoot = uf.find(n * n);
-        int root = uf.find(toIndex(row, col));
+        int fullRoot = fullUF.find(n * n);
+        int root = fullUF.find(toIndex(row, col));
 
         return fullRoot == root;
     }
@@ -101,7 +106,7 @@ public class Percolation {
     }
 
     public boolean percolates() {
-        return uf.find(n * n) == uf.find(n * n + 1);
+        return percolateUF.find(n * n) == percolateUF.find(n * n + 1);
     }
 
 

@@ -7,6 +7,7 @@
     <list default="true" id="c1e4f978-b3bd-4ae1-84e9-9e1170bce808" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Percolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Percolation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/submit.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +107,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Percolation">
+  <component name="RunManager" selected="Application.InteractivePercolationVisualizer">
     <configuration name="InteractivePercolationVisualizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="InteractivePercolationVisualizer" />
       <module name="Algorithms, Part I" />
@@ -136,8 +137,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Percolation" />
         <item itemvalue="Application.InteractivePercolationVisualizer" />
+        <item itemvalue="Application.Percolation" />
       </list>
     </recent_temporary>
   </component>
@@ -156,7 +157,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1737691056785</updated>
-      <workItem from="1737691057905" duration="22664000" />
+      <workItem from="1737691057905" duration="25593000" />
     </task>
     <servers />
   </component>
