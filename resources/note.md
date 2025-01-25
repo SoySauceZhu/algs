@@ -25,6 +25,8 @@ Instead, store data in a special position or structure (i.e. the `-1` index or h
 
 
 
+# 4 Stack and Queue
 
+![alt text](image-1.png)
 
 

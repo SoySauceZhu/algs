@@ -5,7 +5,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1e4f978-b3bd-4ae1-84e9-9e1170bce808" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.noai" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeInsightSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/lift.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/externalDependencies.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/file.template.settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/fileTemplates/includes/File Header.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/fileTemplates/internal/AnnotationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/fileTemplates/internal/Class.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/fileTemplates/internal/Enum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/fileTemplates/internal/Interface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/fileTemplates/internal/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/fileTemplates/internal/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/findbugs-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Algorithms__Part_I.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Algorithms__Part_I.xml.old" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/algs4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/saveactions_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.lift/algs4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.lift/checkstyle-coursera.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.lift/checkstyle-lift.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.lift/checkstyle-suppressions.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.lift/spotbugs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithms, Part I.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Deque.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Permutation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RandomizedQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/distinct.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/duplicates.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mediumTale.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/permutation10.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/permutation4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/permutation5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/permutation6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/permutation8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tale.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tinyTale.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../percolation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../percolation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/note.md" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/note.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +94,7 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
+  "associatedIndex": 0
 }]]></component>
   <component name="ProjectFrameBounds">
     <option name="x" value="106" />
@@ -89,10 +138,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.InteractivePercolationVisualizer.executor": "Run",
-    "Application.Percolation.executor": "Debug",
-    "Application.PercolationStats.executor": "Run",
-    "Application.PercolationVisualizer.executor": "Debug",
+    "Application.Deque.executor": "Run",
+    "Application.Permutation.executor": "Debug",
+    "Application.RandomizedQueue.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
@@ -105,38 +153,34 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.InteractivePercolationVisualizer">
-    <configuration name="InteractivePercolationVisualizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="InteractivePercolationVisualizer" />
+  <component name="RunManager" selected="Application.Deque">
+    <configuration name="Deque" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Deque" />
       <module name="Algorithms, Part I" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Percolation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Percolation" />
+    <configuration name="Permutation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Permutation" />
+      <module name="Algorithms, Part I" />
+      <option name="PROGRAM_PARAMETERS" value="3 &lt; distinct.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RandomizedQueue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RandomizedQueue" />
       <module name="Algorithms, Part I" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PercolationStats" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PercolationStats" />
-      <module name="Algorithms, Part I" />
-      <option name="PROGRAM_PARAMETERS" value="200 100" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.PercolationStats" />
-      <item itemvalue="Application.InteractivePercolationVisualizer" />
-      <item itemvalue="Application.Percolation" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.InteractivePercolationVisualizer" />
-        <item itemvalue="Application.Percolation" />
+        <item itemvalue="Application.Deque" />
+        <item itemvalue="Application.Permutation" />
+        <item itemvalue="Application.RandomizedQueue" />
       </list>
     </recent_temporary>
   </component>
@@ -151,11 +195,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <created>1737691056785</created>
+      <created>1737770996065</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1737691056785</updated>
-      <workItem from="1737691057905" duration="25989000" />
+      <updated>1737770996065</updated>
+      <workItem from="1737770997132" duration="9042000" />
     </task>
     <servers />
   </component>
@@ -198,21 +242,36 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="Percolation" memberName="grid" />
-      </pinned-members>
-    </pin-to-top-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="perc.isFull(1,3)" language="JAVA" />
-        <watch expression="perc.percolates()" language="JAVA" />
-      </configuration>
-    </watches-manager>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Deque.java</url>
+          <line>149</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Deque.java</url>
+          <line>159</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Permutation.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
