@@ -8,7 +8,6 @@ public class Percolation {
     private int[] dx = { -1, 1, 0, 0 };
     private int[] dy = { 0, 0, -1, 1 };
     private int opened = 0;
-    private boolean percolate = false;
 
     public Percolation(int n) {
         if (n <= 0) {
@@ -24,7 +23,7 @@ public class Percolation {
             }
         }
 
-        uf = new WeightedQuickUnionUF(n * n + 1);
+        uf = new WeightedQuickUnionUF(n * n + 2);
     }
 
     private boolean isInGrid(int row, int col) {
@@ -76,8 +75,9 @@ public class Percolation {
             uf.union(toIndex(row, col), n * n);     // All first row elements are union to n^2 index
         }
 
-        if (row == n && isFull(row, col)) {
-            percolate = true;
+        if (row == n) {
+            uf.union(toIndex(row, col),
+                     n * n + 1); // All last row elements are union to n^2+1 index
         }
     }
 
@@ -101,7 +101,7 @@ public class Percolation {
     }
 
     public boolean percolates() {
-        return percolate;
+        return uf.find(n * n) == uf.find(n * n + 1);
     }
 
 
