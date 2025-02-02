@@ -13,7 +13,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class BruteCollinearPoints {
-    private Point[] points;
     private List<LineSegment> collinearSegments;
 
     public BruteCollinearPoints(Point[] points) {
@@ -29,18 +28,19 @@ public class BruteCollinearPoints {
                     throw new IllegalArgumentException("repeated point");
                 }
             }
-            this.points = points.clone();
         }
-        Arrays.sort(this.points);
+
+        Point[] tmp = Arrays.copyOf(points, points.length);
+        Arrays.sort(tmp);
 
         collinearSegments = new ArrayList<LineSegment>();
 
-        for (int i = 0; i < points.length; i++) {
-            for (int j = i + 1; j < points.length; j++) {
-                for (int k = j + 1; k < points.length; k++) {
-                    for (int l = k + 1; l < points.length; l++) {
-                        if (isCollinear(points[i], points[j], points[k], points[l])) {
-                            LineSegment line = new LineSegment(points[i], points[l]);
+        for (int i = 0; i < tmp.length; i++) {
+            for (int j = i + 1; j < tmp.length; j++) {
+                for (int k = j + 1; k < tmp.length; k++) {
+                    for (int l = k + 1; l < tmp.length; l++) {
+                        if (isCollinear(tmp[i], tmp[j], tmp[k], tmp[l])) {
+                            LineSegment line = new LineSegment(tmp[i], tmp[l]);
                             collinearSegments.add(line);
                         }
                     }
@@ -50,10 +50,10 @@ public class BruteCollinearPoints {
     }
 
     public LineSegment[] segments() {
-        int n = collinearSegments.size();
-        LineSegment[] res = new LineSegment[n];
-        for (int i = 0; i < n; i++) {
-            res[i] = collinearSegments.get(i);
+        LineSegment[] res = new LineSegment[numberOfSegments()];
+        int i = 0;
+        for (LineSegment segment : collinearSegments) {
+            res[i++] = segment;
         }
         return res;
     }
@@ -63,7 +63,10 @@ public class BruteCollinearPoints {
     }
 
     private boolean isCollinear(Point a, Point b, Point c, Point d) {
-        return a.slopeTo(b) == a.slopeTo(c) && a.slopeTo(c) == a.slopeTo(d);
+        double s1 = a.slopeTo(b);
+        double s2 = a.slopeTo(c);
+        double s3 = a.slopeTo(d);
+        return s1 == s2 && s2 == s3;
     }
 
 
