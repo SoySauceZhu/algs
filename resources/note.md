@@ -73,8 +73,8 @@ Given any $m, n$, sort on m and then n, m-sorted remains after n-sorted.
 Graham Scan: 
 * Iterate through node in counter-clockwise. 
 * Add the current node to vertices candidates.
-* Test recursively, if any candidates (expect current) create a 'right turn' with the current node, remove them from candidates.
-* The left is vertices of convex hull 
+* Test recursively, if any previous candidates (expect current) create a 'right turn' with the current node, remove them from candidates.
+* The remains are vertices of convex hull 
 
 ## Stability
 A stable sort preserves the relative order of items with equal keys.
