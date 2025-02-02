@@ -4,9 +4,24 @@
 
 ## Quick Find
 
+`union(a, b)`: Iterate through the array update all entries whose value is same as `arr[a]` to `arr[b]`
+`find(a, b)`: return `arr[a] == arr[b]`
+
+Always flat but the price is hight, union cost O(n)
+
 ## Quick Union
 
+`union(a,b)` find the root of `a` and `b` and update `arr[root(b)]` to `arr[root(a)]`
+`find(a, b)`: return `arr[root(a)] == arr[root(b)]`
+
+Cost of union is less than O(n). Yet find cost is greater than Quick find (O(n))
+
+
+
 ## Improvement of Quick Union
+Improvement: weighted tree. Always connect small tree to big. (You should record `size[]`)
+Improvement: path compression (very flat). Update nodes that are examined in finding root (`root(a)`) directly point to root
+Improvement: path compression (halved path). Only one line of code added,Update nodes that are examined in finding root (`root(a)`) directly point to its **grandparent**
 
 - Weighted  
 ![alt text](image.png)
@@ -46,13 +61,14 @@ A total order is a binary relation ≤ that satisfies:
 
 ## Selection sort: $\theta(n^2)$
 ## Insertion sort: $\Omega(n), O(n^2)$
+Swap iteratively until the focused items is in proper position
 ## Shell sort: $O(n^{3/2})$ when $n=3x+1$   
-Based on insertion sort. But the exchange operations could be reduced.  
+Based on insertion sort. But the exchange operations could be reduced by focus on non-consecutive items.  
 Given any $m, n$, sort on m and then n, m-sorted remains after n-sorted.  
 ![alt text](image-3.png)
 ## Shuffle:  
 * Assign random numbers index and sort by index
-* Knuth shuffle
+* Knuth shuffle: In iteration `i`, pick integer `r` between `0` and `i`. Then shuffle `i` and `r`
 ## Convex Hull
 Graham Scan: 
 * Iterate through node in counter-clockwise. 
