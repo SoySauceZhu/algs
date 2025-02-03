@@ -33,6 +33,10 @@ public class BruteCollinearPoints {
         Point[] tmp = Arrays.copyOf(points, points.length);
         Arrays.sort(tmp);
 
+        if (tmp.length < 4) {
+            return;
+        }
+
         collinearSegments = new ArrayList<LineSegment>();
 
         for (int i = 0; i < tmp.length; i++) {
