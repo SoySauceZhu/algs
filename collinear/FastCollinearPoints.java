@@ -39,7 +39,7 @@ public class FastCollinearPoints {
         Point[] tmp2 = Arrays.copyOf(tmp, tmp.length);
 
         for (int m = 0; m < tmp.length; m++) {
-            Point p = tmp[m];
+            Point p = tmp[m];           // key point
             Arrays.sort(tmp2, p.slopeOrder());
 
             for (int i = 1; i < tmp2.length - 2; i++) {
@@ -48,8 +48,11 @@ public class FastCollinearPoints {
                 double s3 = p.slopeTo(tmp2[i + 2]);
                 if (s1 == s2 && s1 == s3) {
                     Point[] candidate = { p, tmp2[i], tmp2[i + 1], tmp2[i + 2] };
+
+                    // Always point from lower to higher
                     Arrays.sort(candidate);
                     if (p.compareTo(candidate[0]) == 0) {
+                        // Only if the key point is the lowest on the collinear line
                         LineSegment line = new LineSegment(p, candidate[3]);
                         segments.add(line);
                     }
