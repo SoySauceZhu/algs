@@ -10,14 +10,13 @@ public class Solver {
     private class Node implements Comparable<Node> {
         private Node parent;
         private Board board;
-        private int manhattan;
         private int move;
         private int priority;
 
         public Node(Node parent, Board board) {
             this.parent = parent;
             this.board = board;
-            this.manhattan = board.manhattan();
+            int manhattan = board.manhattan();
             this.move = parent == null ? 0 : parent.move + 1;
             this.priority = manhattan + move;
         }
@@ -27,9 +26,8 @@ public class Solver {
         }
 
         public List<Node> children() {
-            List<Board> boards = (List<Board>) this.board.neighbors();
             List<Node> children = new ArrayList<Node>();
-            for (Board child : boards) {
+            for (Board child : this.board.neighbors()) {
                 Node ptr = this;
                 boolean found = false;
                 while (ptr != null) {
@@ -47,26 +45,24 @@ public class Solver {
     }
 
     private Stack<Board> solutionBoards;
-    private boolean solved = true;
+    private boolean solved = false;
     private int moves;
 
     public Solver(Board board) {
+        if (board == null) {
+            throw new IllegalArgumentException();
+        }
         Node currNode = new Node(null, board);
 
         MinPQ<Node> minPQ = new MinPQ<>();
         minPQ.insert(currNode);
         // private List<Node> solution = new ArrayList<>();
-        Node solution = currNode;
 
-        while (true) {
+        while (minPQ.size() > 0) {
             currNode = minPQ.delMin();
-            solution = currNode;
 
             if (currNode.board.isGoal()) {
                 solved = true;
-                break;
-            }
-            else if (currNode.children().isEmpty()) {
                 break;
             }
 
@@ -75,16 +71,18 @@ public class Solver {
             }
         }
 
-        int m = 0;
-        solutionBoards = new Stack<>();
-        Node ptr = solution;
-        solutionBoards.push(ptr.board);
-        while (ptr.parent != null) {
-            m++;
-            ptr = ptr.parent;
+        if (solved) {
+            int m = 0;
+            solutionBoards = new Stack<>();
+            Node ptr = currNode;
             solutionBoards.push(ptr.board);
+            while (ptr.parent != null) {
+                m++;
+                ptr = ptr.parent;
+                solutionBoards.push(ptr.board);
+            }
+            moves = m;
         }
-        moves = m;
     }
 
     public boolean isSolvable() {

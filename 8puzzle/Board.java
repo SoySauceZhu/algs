@@ -132,7 +132,23 @@ public class Board {
     }
 
     public Board twin() {
-        return neighbors().iterator().next();
+        int[][] newTiles = copyTiles();
+        int[] indices = new int[4];
+        int k = 0;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (i != y0 || j != x0) {
+                    indices[k++] = i;
+                    indices[k++] = j;
+                    if (k == indices.length) break;
+                }
+            }
+            if (k == indices.length) break;
+        }
+        int t = newTiles[indices[0]][indices[1]];
+        newTiles[indices[0]][indices[1]] = newTiles[indices[2]][indices[3]];
+        newTiles[indices[2]][indices[3]] = t;
+        return new Board(newTiles);
     }
 
     public static void main(String[] args) {
