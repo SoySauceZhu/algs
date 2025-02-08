@@ -83,3 +83,56 @@ A stable sort preserves the relative order of items with equal keys.
 * Selection: not stable
 * Shell: not stable
 * Merge: Stable
+
+
+# 6 Quick sort
+
+## Quick sort
+`int pivot = partition(arr, lo, hi)` function: no less on right side of pivot and no greater on left
+
+## Select the k-th largest
+
+Only sort on one side.
+Until the pivot is equal to `k` -> no less on right side -> `k`-th largest
+
+O(n): N + N/2 + N/4 + ... + 1 = 2N (logN terms)
+
+```java
+public static Comparable select(Comparable[] a, int k)
+{
+ StdRandom.shuffle(a);
+ int lo = 0, hi = a.length - 1;
+ while (hi > lo)
+ {
+ int j = partition(a, lo, hi);
+ if (j < k) lo = j + 1;
+ else if (j > k) hi = j - 1;
+ else return a[k];
+ }
+ return a[k];
+}
+```
+
+## Duplicate Keys
+
+When array is huge, keys are in small number
+
+- Quicksort goes quadratic with duplicate keys, unless partitioning stops on equal keys
+- Merge sort is `O(NlogN)` no matter the keys.  
+Since what grantees an `NlogN` is half-sized partitioning. Only evenly partitioned can the logic reaches logN depth of iteration. Where the keys are all same, we only partitioned with `[n-1]`, `[]` (empty). Which required `(N-1)` depth and thus `O(N(N-1)) = O(N^2)`
+
+Solution:
+- Stop at duplicated key
+- 3-way partitioning
+
+```
+Scan i from left to right.
+– (a[i] < v): exchange a[lt] with a[i]; increment both lt and i
+– (a[i] > v): exchange a[gt] with a[i]; decrement gt
+– (a[i] == v): increment i
+```
+
+## System sort
+
+C `qsort()` do quicksort to primitive data types and merge sort to objects. Since objects may require for stable sorting.
+
